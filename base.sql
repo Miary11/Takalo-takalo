@@ -57,6 +57,11 @@ insert into Categorie values(null,'Montres');
 insert into Categorie values(null,'Livres');
 
 
-
-
-
+create table proposition(
+	utilisateur1 int not null,
+	utilisateur2 int not null,
+	objet int not null,
+	foreign key (utilisateur1) references Utilisateur(idUtilisateur),
+	foreign key (utilisateur2) references Utilisateur(idUtilisateur),
+	foreign key (objet) references Objet(idObjet)
+);
