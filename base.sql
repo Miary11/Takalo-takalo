@@ -37,5 +37,11 @@ insert into Objet values(null,4,'pantalon noir','pantalon2.jpg',30,'pantalon noi
 insert into Objet values(null,5,'dvd Coraline','dvd1.jpg',10,'dessin animé Coraline',2);
 
 
+insert into Categorie values(null,'Vetement');
+insert into Categorie values(null,'Dvd');
+insert into Categorie values(null,'Chaussure');
+insert into Categorie values(null,'Montre');
+
+
 
 
