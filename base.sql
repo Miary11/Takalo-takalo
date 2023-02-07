@@ -24,11 +24,11 @@ create table Objet(
 	foreign key (categorie) references Categorie(idCategorie),
 	foreign key (propriétaire) references Utilisateur(idUtilisateur)
 );
+
+insert into Utilisateur values(null,'superuser','superuser@gmail.com','superuser1234');
+
 insert into Utilisateur values(null ,'Rakoto John','Johnraks@gmail.com','srt2004');
 insert into Utilisateur values(null ,'Ramanandraibe Toky','Tokyrh@gmail.com','rhtoky12');
 insert into Utilisateur values(null ,'Rabenarivo Miantsa','Miantsa12@gmail.com','wahuan21');
 insert into Utilisateur values(null ,'Rakotoson Naina','Nainaraks@gmail.com','artiste23');
 insert into Utilisateur values(null ,'Rajoelina Tsito','Tsitorajoelina@gmail.com','mits34');
-
-
-
