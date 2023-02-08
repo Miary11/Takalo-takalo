@@ -31,9 +31,33 @@ class User extends CI_Controller {
 
 	public function mesObjets()
 	{
+		$id = $this->input->post("id");
 		$data['title'] = 'Takalo - Mes objets';
-		$data['listeObjet'] = $this->Model->malisteObjets(3);
+		$data['listeObjet'] = $this->Model->malisteObjets($id);
         $data['content'] = 'page/mesObjets';
+		$this->load->view('page/template',$data);
+	}
+	public function leursObjets()
+	{
+		$data['title'] = 'Takalo - Autres objets';
+		$id = $this->input->post("id");
+		$data['listeObjet'] = $this->Model->leurlisteObjets($id);
+        $data['content'] = 'page/leursObjets';
+		$this->load->view('page/template',$data);
+	}
+
+	public function detail($id = '')
+	{
+		$data['title'] = 'Takalo - Détails';
+		$data['detailsObjet'] = $this->Model->objetDetail($id);
+        $data['content'] = 'page/detailObjet';
+		$this->load->view('page/template',$data);
+	}
+	public function detailAutre($id = '')
+	{
+		$data['title'] = 'Takalo - Détails';
+		$data['detailsObjet'] = $this->Model->objetDetail($id);
+        $data['content'] = 'page/detailAutreObjet';
 		$this->load->view('page/template',$data);
 	}
 

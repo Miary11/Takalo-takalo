@@ -54,18 +54,6 @@
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto" id="Top">
 							<li class="nav-item" id="activated"><a class="nav-link" href="<?php echo base_url('welcome/accueil')?>">Accueil</a></li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Objets</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="<?php echo base_url('user/mesObjets')?>">Mes objets</a></li>
-									<li class="nav-item"><a class="nav-link" href="#">Mes propositions</a></li>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Autres utilisateurs</a>
-							</li>
 							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"

@@ -33,8 +33,8 @@
 
         public function malisteObjets($id)
         {
-            $format = "select * from Objet where propriétaire = %d";
-            $sql = sprintf($format,$this->db->escape($id));
+            $format = "select * from Objet where propriétaire = ".$id;
+            $sql = $format;
             $query = $this->db->query($sql);
             $result = array();
 
@@ -44,10 +44,23 @@
             }
             return $result;
         }
-        public function objetDétails($id)
+        public function leurlisteObjets($id)
         {
-            $format = "select * from Objet where idObjet = %d";
-            $sql = sprintf($format,$this->db->escape($id));
+            $format = "select * from Objet where propriétaire != ".$id;
+            $sql = $format;
+            $query = $this->db->query($sql);
+            $result = array();
+
+            foreach($query->result_array() as $row)
+            {
+                $result[] = $row;
+            }
+            return $result;
+        }
+        public function objetDetail($id)
+        {
+            $format = "select * from ObjetDetail where idObjet = ".$id;
+            $sql = $format;
             $query = $this->db->query($sql);
             $result = array();
 

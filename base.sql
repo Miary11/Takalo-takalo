@@ -60,8 +60,16 @@ insert into Categorie values(null,'Livres');
 create table proposition(
 	utilisateur1 int not null,
 	utilisateur2 int not null,
-	objet int not null,
+	objet1 int not null,
+	objet2 int not null,
 	foreign key (utilisateur1) references Utilisateur(idUtilisateur),
 	foreign key (utilisateur2) references Utilisateur(idUtilisateur),
-	foreign key (objet) references Objet(idObjet)
+	foreign key (objet1) references Objet(idObjet),
+	foreign key (objet2) references Objet(idObjet)
+);
+
+create or replace view ObjetDetail as(select idObjet,Categorie.nom as CategorieNom,Utilisateur.nom as Propriétaire,Objet.nom,image,prix,description 
+	from Objet
+	join Categorie on Categorie.idCategorie = Objet.categorie
+	join Utilisateur on Objet.propriétaire = Utilisateur.idUtilisateur
 );

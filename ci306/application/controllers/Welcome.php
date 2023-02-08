@@ -18,6 +18,16 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct()
+    {
+        parent::__construct();
+       
+  //       if(!$this->session->has_userdata('mail'))
+		// {
+		// 	redirect('welcome/index');  
+		// }
+		$this->load->library('session');
+    }
 	public function index()
 	{
 		$data['title']='Takalo - Se Connecter';
@@ -36,7 +46,12 @@ class Welcome extends CI_Controller {
 		}
 		if($user == 1)
 		{	
-		 	redirect('welcome/accueil');
+			$id = $this->Model->getUserId($mail,$pwd);
+			$this->session->set_userdata('idUtilisateur',$id);
+			$data['title']='Takalo - Accueil';
+			$data['content']='page/accueil';
+			$data['id'] = $this->session->userdata('idUtilisateur');
+			$this->load->view('page/template',$data);
 		}
 		else{
 		 	redirect('welcome/index');
@@ -45,7 +60,6 @@ class Welcome extends CI_Controller {
 
 	public function accueil()
 	{
-		
 		$data['title']='Takalo - Accueil';
 		$data['content']='page/accueil';
 		$this->load->view('page/template',$data);

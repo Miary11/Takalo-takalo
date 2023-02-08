@@ -1,7 +1,7 @@
 <form action="get">
    <section class="banner-area organic-breadcrumb">
         <div class="container">
-            <h1>Vos objets</h1>
+            <h1>Objets d'autres utilisateurs</h1>
         </div>
     </section>
     <!-- End Banner Area -->
@@ -37,9 +37,8 @@
                                     <td>
                                         <div class="choix">
                                             <div class="card_area ">
-                                               <a class="primary-btn" href="<?php echo base_url('user/detail');?>/<?php echo $liste['idObjet']?>">Voir</a>
+                                               <a class="primary-btn" href="<?php echo base_url('user/detailAutre');?>/<?php echo $liste['idObjet']?>">Voir</a>
                                             </div>
-                                            
                                         </div>
                                     </td>
                               
